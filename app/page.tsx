@@ -1,9 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { Modal } from "@/components/ui/modal";
 
@@ -32,7 +30,7 @@ const project: Project = {
   tools: "Cursor AI, v0.dev, Firebase",
   role: "Product Designer & Developer",
   impact: "Enabled our staff and setters to track setting data efficiently",
-  challenge: "The climging gym struggled to build a google sheet that fit the needs of the setters.",
+  challenge: "The climbing gym struggled to build a google sheet that fit the needs of the setters.",
   solution: "Designed a sleek dashboard with interactive data visualization for route statistics.",
   process: [
     "Sketched out the app navigation and layout",
@@ -105,7 +103,6 @@ const SectionIcon = ({ children, color }: { children: React.ReactNode, color: st
 
 export default function Home() {
   const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
-  const [isProjectDetailsOpen, setIsProjectDetailsOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [headerHeight, setHeaderHeight] = useState(0);
   const [currentSection, setCurrentSection] = useState(0);
@@ -135,7 +132,6 @@ export default function Home() {
   const progress = Math.min(1, scrollY / headerHeight);
   const currentHeaderHeight = headerHeight * (1 - progress * 0.9); // Keep 10% of height at minimum
   const titleScale = Math.max(0.2, 1 - (progress * 0.9)); // More aggressive scaling
-  const navOpacity = progress;
 
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -183,7 +179,7 @@ export default function Home() {
                 className="cursor-pointer hover:opacity-80 transition-opacity max-w-[600px] w-full"
               >
                 <Image
-                  src="/signature.png"
+                  src="/signature.PNG"
                   alt="Ryan Chin"
                   width={800}
                   height={160}
@@ -241,7 +237,7 @@ export default function Home() {
                 transition={{ duration: 0.5 }}
               >
                 <Image
-                  src="/setter_photo.jpg"
+                  src="/setter_photo.JPG"
                   alt="Climbing Route Setter"
                   fill
                   className="object-cover rounded-lg"
@@ -594,10 +590,10 @@ export default function Home() {
               >
                 <motion.div 
                   className="relative h-[600px] w-full rounded-lg overflow-hidden cursor-pointer transform transition-transform duration-300 hover:scale-[1.02]"
-                  onClick={() => setSelectedImage({ src: "/abstract.png", alt: "Abstract Art" })}
+                  onClick={() => setSelectedImage({ src: "/abstract.PNG", alt: "Abstract Art" })}
                 >
                   <Image
-                    src="/abstract.png"
+                    src="/abstract.PNG"
                     alt="Abstract Art"
                     fill
                     className="object-contain select-none pointer-events-none"
@@ -619,10 +615,10 @@ export default function Home() {
                 >
                   <motion.div 
                     className="relative h-[300px] w-full rounded-lg overflow-hidden cursor-pointer transform transition-transform duration-300 hover:scale-[1.02]"
-                    onClick={() => setSelectedImage({ src: "/crux_tee.png", alt: "Crux T-Shirt Design" })}
+                    onClick={() => setSelectedImage({ src: "/crux_tee.PNG", alt: "Crux T-Shirt Design" })}
                   >
                     <Image
-                      src="/crux_tee.png"
+                      src="/crux_tee.PNG"
                       alt="Crux T-Shirt Design"
                       fill
                       className="object-contain select-none pointer-events-none"
@@ -643,10 +639,10 @@ export default function Home() {
                 >
                   <motion.div 
                     className="relative h-[300px] w-full rounded-lg overflow-hidden cursor-pointer transform transition-transform duration-300 hover:scale-[1.02]"
-                    onClick={() => setSelectedImage({ src: "/pikapp_tee.png", alt: "Pi Kappa Phi Design" })}
+                    onClick={() => setSelectedImage({ src: "/pikapp_tee.PNG", alt: "Pi Kappa Phi Design" })}
                   >
                     <Image
-                      src="/pikapp_tee.png"
+                      src="/pikapp_tee.PNG"
                       alt="Pi Kappa Phi Design"
                       fill
                       className="object-contain select-none pointer-events-none"
@@ -667,10 +663,10 @@ export default function Home() {
                 >
                   <motion.div 
                     className="relative h-[300px] w-full rounded-lg overflow-hidden cursor-pointer transform transition-transform duration-300 hover:scale-[1.02]"
-                    onClick={() => setSelectedImage({ src: "/radiohead_design.png", alt: "Radiohead Artwork" })}
+                    onClick={() => setSelectedImage({ src: "/radiohead_design.PNG", alt: "Radiohead Artwork" })}
                   >
                     <Image
-                      src="/radiohead_design.png"
+                      src="/radiohead_design.PNG"
                       alt="Radiohead Artwork"
                       fill
                       className="object-contain select-none pointer-events-none"
@@ -679,7 +675,7 @@ export default function Home() {
                     />
                   </motion.div>
                   <motion.h3 className="text-xl font-bold mt-4 text-white text-center">Radiohead Artwork</motion.h3>
-                  <motion.p className="text-white mt-2 text-center">Fan art inspired by Radiohead's music</motion.p>
+                  <motion.p className="text-white mt-2 text-center">Fan art inspired by Radiohead&apos;s music</motion.p>
                 </motion.div>
               </div>
             </div>
